@@ -413,8 +413,7 @@
         <strong class="footer-caption">Подпишитесь на рассылку
         </strong>
         <div class="footer-email">
-          <label for="footer-email"></label>
-          <input type="email" id="footer-email" placeholder="E-mail">
+          <input type="email" name="footer-email" placeholder="E-mail" required minlength="2">
           <button type="submit" class="footer-email-btn hero-button"> Подписаться
             <svg class="footer-btn-image">
               <use href="./images/icons.svg#icon-send"></use>
@@ -437,22 +436,22 @@
         </strong>
         <div class="modal-wrap">
           <label for="name">Имя</label>
-          <input type="text" id="name">
+          <input name="modal-name" type="text" id="name" required minlength="2">
         </div>
         <div class="modal-wrap">
           <label for="phone">Телефон</label>
-          <input type="tel" id="phone">
+          <input name="modal-tel" type="tel" id="phone" required minlength="2">
         </div>
         <div class="modal-wrap">
           <label for="modal-email">Почта</label>
-          <input type="text" id="modal-email">
+          <input name="modal-mail" type="text" id="modal-email" required minlength="2">
         </div>
         <div class="modal-wrap">
           <label for="comment">Комментарий</label>
-          <textarea class="modal-comment" name="" id="comment" rows="5" placeholder="Введите текст"></textarea>
+          <textarea name="modal-comment" class="modal-comment" name="" id="comment" placeholder="Введите текст"></textarea>
         </div>
         <div class="modal-check">
-          <input type="checkbox" id="modal-check">
+          <input name="modal-agreement" type="checkbox" id="modal-check" value="agree" required>
           <label for="modal-check">Соглашаюсь с рассылкой и принимаю
             <a class="modal-check-link" href="">Условия договора</a>
           </label>
