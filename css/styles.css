@@ -208,7 +208,6 @@ textarea {
       rgba(47, 48, 58, 0.4)
     ),
     url(../images/hero.jpg);
-  content: "";
   max-width: 1600px;
   height: 600px;
   margin: 0 auto;
@@ -846,6 +845,10 @@ textarea {
   cursor: pointer;
 }
 
+.btn-close:hover {
+  fill: var(--accent-color);
+}
+
 .btn-close-img {
   width: 18px;
   height: 18px;
@@ -876,12 +879,11 @@ textarea {
 }
 
 .modal-wrap {
-  display: flex;
-  flex-direction: column;
   margin-bottom: 10px;
 }
 
 .modal-wrap label {
+  display: inline-block;
   margin-bottom: 4px;
 
   font-weight: 400;
@@ -892,12 +894,34 @@ textarea {
   color: var(--primary-text-color);
 }
 
+.modal-input {
+  position: relative;
+}
+
 .modal-wrap input {
+  width: 100%;
   height: 40px;
-  padding: 11px 12px;
+  padding: 11px 12px 11px 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+}
+
+.modal-wrap input:focus {
+  outline-color: var(--accent-color);
+}
+
+.modal-wrap input:focus + .modal-img {
+  fill: var(--accent-color);
+}
+
+.modal-img {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
 }
 
 .modal-wrap textarea {
