@@ -69,11 +69,14 @@ textarea {
 }
 
 .visually-hidden {
-  position: absolute;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
 }
 
 /* ==============header================== */
@@ -651,11 +654,15 @@ textarea {
   line-height: 1.25;
   letter-spacing: 0.03em;
 
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--primary-white-color);
   background-color: inherit;
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
+}
+
+.footer-email input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .footer-email-btn {
@@ -819,8 +826,7 @@ textarea {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 528px;
-  height: 581px;
+  padding: 40px;
 
   background-color: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -862,10 +868,6 @@ textarea {
   transform: scale(0);
 }
 
-.modal-form {
-  margin: 40px;
-}
-
 .modal-caption {
   display: inline-block;
   margin-bottom: 12px;
@@ -895,7 +897,7 @@ textarea {
   color: var(--primary-text-color);
 }
 
-.modal-input {
+.modal-input-container {
   position: relative;
 }
 
@@ -910,7 +912,8 @@ textarea {
 
 .modal-wrap input:focus,
 .modal-wrap textarea:focus {
-  outline-color: var(--accent-color);
+  outline: none;
+  border-color: var(--accent-color);
 }
 
 .modal-wrap input:focus + .modal-img {
@@ -952,20 +955,37 @@ textarea {
 }
 
 .modal-check {
-  display: flex;
-  align-items: center;
   margin-bottom: 30px;
 }
 
-.modal-check label {
-  margin-left: 8px;
-
+.modal-check-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
 
   color: var(--primary-text-color);
+}
+
+.modal-check-label::before {
+  content: "";
+  display: block;
+  margin-right: 8px;
+  width: 16px;
+  height: 15px;
+  background-image: url(../images/non-check.svg);
+  cursor: pointer;
+}
+
+.modal-check input:checked + .modal-check-label::before {
+  background-image: url(../images/icon-check.svg);
+}
+
+.modal-check input:focus + .modal-check-label::before {
+  outline: 2px solid rgba(0, 0, 255, 0.5);
 }
 
 .modal-check-link {

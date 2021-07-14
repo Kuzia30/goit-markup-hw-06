@@ -298,7 +298,7 @@
     <!-- Футер -->
     <footer class="footer">
       <div class="container footer-section">
-        <div class="footer-column">
+        <div class="footer-column-address">
           <a href="/index.html" class="logo-dark link">
             <span class="part-logo">Web</span>Studio
           </a>
@@ -327,8 +327,8 @@
             </ul>
           </address>
         </div>
-        <div class="footer-column">
-          <strong class="follow-caption">присоединяйтесь </strong>
+        <div class="footer-column-follow">
+          <strong class="footer-caption">присоединяйтесь </strong>
           <ul class="follow-list list">
             <li class="follow-item">
               <a href="" class="follow-link">
@@ -360,6 +360,25 @@
             </li>
           </ul>
         </div>
+
+        <form class="footer-column-form">
+          <strong class="footer-caption">Подпишитесь на рассылку </strong>
+          <div class="footer-email">
+            <input
+              type="email"
+              name="footer-email"
+              placeholder="E-mail"
+              required
+              minlength="2"
+            />
+            <button type="submit" class="footer-email-btn hero-button">
+              Подписаться
+              <svg class="footer-btn-image">
+                <use href="./images/icons.svg#icon-send"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
       </div>
     </footer>
   </body>
